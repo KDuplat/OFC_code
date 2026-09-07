@@ -1,0 +1,178 @@
+/* Historique   */
+
+
+/* April 2010, I begin the clean up of fonction[ LM] (see files copied in this directory). */
+
+/* fonction[ LM].c       are the original files */
+/* fonction[ LM]-reste.c contain the function that have been neither updated nor moved to a fct-.c file */
+
+
+
+
+/*____________________fonction.c_________________________*/
+
+
+  /* updated (see colreadfull) */
+
+void read_col2(double **col, char *nom, int ncol) ;
+void read_colw2car(char*** col, char *nom, int ncol, char car) ;
+void read_colw2free(char** col);
+void free_colw2(char** col) ;
+
+int    max_i(int a, int b) ;
+int    min_i(int a, int b) ;
+double max_d(double a, double b) ;
+double min_d(double a, double b) ;
+
+  /* fonctions ensta projet Gueydan, moved to fct-process.c, not updated */
+
+void envoyer_entier(FILE *f , int n) ;     
+int recevoir_entier( FILE *f) ;
+void associer_fonction_signal( int i , struct sigaction *act,void (*traitesignal)(void) ) ;
+pid_t lancerprocessus(char *arg[10], FILE **f_entree, FILE **f_sortie, int* fd_B ) ;
+
+ 
+  /*reste */
+
+    /*potentially useful */
+int replace(char *name, char* old, char* new, char *name_replaced);
+
+    /* replaced with other functions (using awk)*/
+int     read_mcol_sandwich(char *name, char *word, char *beg, char *end, char *name_t);
+double  read_word_after_vestige(char *name, char *word, char *word_before, int n);
+void    read_word_after(char *name, char *word_before, char **res ) ;
+void    read_number_after(char *name, char *word_before, double *res ) ;
+  
+    /*specific to Wageningen*/
+double*  mirror_col(double *col) ;
+int      max_col(double *col, int n1, int n2);
+double*  abs_col(double *col);
+double*  der_col(double *colY, double* colX);
+double*  der2_col(double *colY, double* colX);
+int      seek_peak(double *colY, double* colX);
+void     display_col(double* col)  ; 
+void     display_tab(double** tab)  ; 
+
+
+/*____________________fonctionL.c_________________________*/
+
+
+  /* updated */
+  char** list_file(char *nom, char* carac);
+
+  /* moved to fct-lattice */
+int  no_coor (int x, int y, int z, int m ) ;
+void coor_no (int* px, int *py, int *pz, int no, int m) ;
+int  no_coor1a(int x, int y, int z, int m) ;
+void coor_no1a(int* px, int *py, int *pz, int no, int m) ;
+int  no_coor2a(int x, int y, int z, int m ) ;
+void coor_no2a(int* px, int *py, int *pz, int no, int m) ;
+
+  /*moved to ... */
+void moyeqm2(double* col, double* moy, double* eqm, int n1, int n2);   /* ... */
+int s_in(char* sa, char* sb);                                          /* string */
+int  s_replace(char* sa, char* sb, char* sc) ;                         /* string */
+void interpol_lin(double* colx, double* coly, double x, double* res ); /* ...    */
+
+  /* reste */
+int multi_1000(double x) ;
+void   get_str_nom(char* nom, char* s1, char* s2, char* s0, char *res) ;
+double get_par_nom(char* nom, char* s1, char* s2, char* s0 ) ;
+int ncol_file(char *nom);
+void moyeqm(double* moy, double* var, double* max,double* col ) ;
+void minmaxincol(double* col, double* rmin, double* rmax,  int n1, int n2);
+
+
+
+/*____________________fonctionM.c_________________________*/
+
+
+  /* moved to fct-rand  */
+void init_genrand(unsigned long s) ;
+unsigned long genrand_int32(void) ;
+
+double rand01(void)  ;
+double rand01i(void) ;
+double rand11i(void)  ;
+int    randin(int n) ;
+double randG(void)   ;
+void randvectoronsphere(double r, double u[3]) ;
+void randvectorinsphere(double r, double u[3]) ;
+double randbondvec(double v[3], double lmax2,double l);
+void randmatrixrotation(double phi, double u[3][3]);
+
+
+  /*moved to fct-string */
+void splitword(char *word, char *sep, char ***res) ;
+void splitwordfree(char **res);
+
+
+  /* moved to fct-matrix */
+void fm_m(double a[3][3], double a00, double a10, double a20, double a01, double a11, double a21, double a02, double a12, double a22 ) ;
+void display_m(double a[3][3]) ;
+double det_m(double a[3][3]) ;
+double trace_m(double a[3][3]) ;
+double tracexy_m(double a[3][3]) ;
+void trans_m(double a[3][3], double b[3][3]) ;
+void inv_m(double a[3][3], double b[3][3] ) ;
+void sm_m(double a[3][3], double b[3][3], double c[3][3]) ;
+void pm_m(double a[3][3], double b[3][3], double  c[3][3]) ;
+void pm3_m(double a1[3][3], double a2[3][3], double a3[3][3], double b[3][3]) ;
+double modvc_m(int k, double a[3][3]) ;
+void pmv_m(double a[3][3], double x, double y, double z, double *xr, double *yr, double *zr) ;
+void pmv_v(double a[3][3], double u[3], double res[3]) ;
+
+void cp_m(double a[3][3], double b[3][3]) ;
+void pms_m(double a[3][3], double x) ;
+void init0_m(double a[3][3]);
+void init1_m(double a[3][3]);
+void init0_im(int a[3][3]) ;
+void traceless_m(double a[3][3],  double b[3][3]) ;
+void tracelessxy_m(double a[3][3],  double b[3][3]) ;
+void convertword_m(char *word, double a[3][3]) ;
+double  dis2maxH_m(double a[3][3]) ;
+void ftnirpf_m(FILE *fo , double ma[3][3]);
+void ftnirps_m(char *buf, double ma[3][3]);
+
+void fm_m2(double a[2][2], double a00, double a10, double a01, double a11);
+void display_m2(double a[2][2]);
+void pms_m2(double a[2][2], double x);
+void cp_m2(double a[2][2], double b[2][2]);
+void diag_m2(double a[2][2], double b[2][2]);
+double anglevp_m2(double a[2][2],double lam);
+
+
+  /* moved to fct-list */
+void add_li(lis **list, int n) ;
+void del_li(lis **list, int n) ;
+void empty_li(lis **list) ;
+void display_li(lis* liste) ;
+int cardinal_li(lis* liste) ;
+void file_li(lis* liste, char *buf) ;
+int in_li(int m, lis* liste) ;
+
+void add_ls(lss **list, lsics ic) ;
+void del_ls(lss **list, lsics ic) ;
+void empty_ls(lss **list) ;
+void display_ls(lss* liste) ;
+int cardinal_ls(lss* liste) ;
+void file_ls(lss* liste, char *buf) ;
+int in_ls(lsics ic, lss* liste) ;
+
+  /*moved to fct-nbi*/
+void  swapnbi(nbis *tab, int a, int b);
+int siftnbi(nbis *tab, int start, int count);
+void heapsortnbi(nbis *tab, int count); 
+
+  /*moved to fct-string*/
+void removestarcolword(char **colw) ;
+int Nfromword(char *word) ;
+void writestarword_m(FILE *f, double a[3][3]) ;
+char *zstrncat( char *dst, const char *src, size_t len );
+
+  /*moved to fct-io  */
+void copysmallfile(char *filea, char *fileb);
+void writebuffer(char *buf, int *lcur, int lmax, FILE* f, char *string) ;
+
+
+

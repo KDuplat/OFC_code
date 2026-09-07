@@ -1,0 +1,1 @@
+void fractalboxes(double *slope, double *chi2);

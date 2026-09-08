@@ -230,6 +230,7 @@ void initialize(void){
 	int tabseed[21] = {0, 20418437,94704581,45898144,49094059,77416885,91322469,40218964,93641667,29822916,625909,
 											16336774,62881795,27998504,9612956,25592297,77114095,23554325,55380051,47971513,41100793};
 	FILE *ifile, *initfile; long double col1, col2, col3; char savepath[200], initpath[200];
+	char str[_NL];
 
 	printf("AvalancheB begin\n");
   	initialize_files();
@@ -360,6 +361,13 @@ void initialize(void){
 	fprintf(Shape.Shapefile100, "#Shape of avalanche smaller than N/100 and larger than N/1000\n#Nava  zF  StackzF  s  nin\n");
 	fprintf(Shape.Shapefile1000, "#Shape of avalanche smaller than N/1000\n#Nava  zF  StackzF  s  nin\n");
 	fflush(Shape.Shapefile10); fflush(Shape.Shapefile100); fflush(Shape.Shapefile1000);
+
+	if(Par.switchPDF){
+		if (Fractal.sw){sprintf(str, "zF + StackzF, S, nin, dz, ttop, tava, fractal_slope, fractal_chi2 \n");
+		}else{sprintf(str, "zF + StackzF, S, nin, dz, ttop, tava, nin_cm\n");}
+		
+		gzwrite_str(F2, str);
+	}
 
 	if(Prediction.sw){
 		fprintf(Prediction.files1, "#Nava  s  pos\n");

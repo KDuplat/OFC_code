@@ -1,72 +1,80 @@
-Description général de l'organisation des dossiers:
+Description générale de l'organisation des dossiers :
 
 Ce dossier contient les fichiers de traitement des données.
-Je ne suis pas sur que tous les notebook puissent être lancé tel quel. 
-Je pense que certain script on des fonctions obsolète.
+Je ne suis pas sûr que tous les notebooks puissent être lancés tels quels.
+Je pense que certains scripts ont des fonctions obsolètes.
 
+Fct_script contient toutes les fonctions que j'ai le plus utilisées.
 
-Fct_script contient toutes les fonctions que j'ai le plus utilisé. 
+Thesis_figure contient les scripts utilisés pour chaque figure de chaque chapitre.
 
+* Savedata contient toutes les données traitées de chaque figure.
+* Dans ChapterPatches : Figures.ipynb est le script principal pour ce chapitre.
+  ---- Figure_otsu.py permet de faire la détection des patches pour un projet.
+  ---- Figure_otsu.ipynb traite les données de la détection des patches.
 
-Thesis_figure contient les scripts utilisé pour chaque figure de chaque chapitre.
-- Savedata contient toutes les données traité de chaque figure.
-- Dans ChapterPatches: Figures.ipynb est le script principale pour ce chapitre
----- Figure_otsu.py permet de faire la détection des patches pour un Projet
----- Figure_otsu.ipynb traite les données de la détection des patches
+Papier_Memory contient les scripts et les figures pour le gros papier :
 
+* Papier_janv_2025.ipynb est le script principal pour toutes les figures.
+* Science.ipynb est une redite pour faire des figures conformes au journal Science.
+* Data_excel contient les données traitées pour Figshare.
+* RealEarthquakes contient les catalogues pour les séismes.
 
-Papier_Memory contient les scripts et les figures pour le gros papier:
-- Papier_janv_2025.ipynb est le script principal pour toutes les figures
-- Science.ipynb est une redite pour faire des figures conforme au journal Science
-- Data_excel contient les données traité pour les figshare 
-- RealEarthquakes contient les catalogues pour les séismes
+Papier_EQ contient le script et les figures du petit papier.
+Rappel : les données sont dans le dossier Papier_Memory.
 
-Papier_EQ contient le script les figures du petit papier.
-Rappel les données sont dans le dossier Papier_Memory
+Les trois dossiers précédents sont à jour et tous les scripts devraient pouvoir être lancés sans problème.
 
-Les trois dossier précédents sont à jours et toutes les scripts devrait pouvoir être lancé sans problème.
+Les dossiers suivants ne sont pas à jour :
 
-Les dossier suivants ne sont pas à jours:
+Avatrack :
 
-Avatrack:
-- avalanche_propagation.ipynb étude de la porpagation des avalanches
-- patch_ava_size étude de la taille des avalanche en fonction de la taille des patches
-- patch_detection évolution de la détetion des pacthes
-- mean_patch_detection comparaison taille patch par longeur de corrélation et détection
+* avalanche_propagation.ipynb : étude de la propagation des avalanches.
+* patch_ava_size : étude de la taille des avalanches en fonction de la taille des patches.
+* patch_detection : évolution de la détection des patches.
+* mean_patch_detection : comparaison de la taille des patches par longueur de corrélation et détection.
 
-Correlation:
-- correlation.ipynb évolution de la fonction de corrélation
-- percolation.ipynb étude de la structure interne du système et de la percolation
+Correlation :
 
-DataML: 
-Etude des données pour le machine learning
+* correlation.ipynb : évolution de la fonction de corrélation.
+* percolation.ipynb : étude de la structure interne du système et de la percolation.
 
-Energy:
-- E_loss.ipynb: étude de quantité liée aux énergies
-- Energy_per_ava.ipynb: étude du taux de production en fonction de la taille du système
+DataML :
+Étude des données pour le machine learning.
 
+Energy :
 
-Epicentre:
-- Epicentre.ipynb : étude de la position des épicentres
-- Com.ipynb: etude de la position des centre de masse
+* E_loss.ipynb : étude de quantités liées aux énergies.
+* Energy_per_ava.ipynb : étude du taux de production en fonction de la taille du système.
 
-Fractal:
-- Etude de la dimension fractal des avalanches
+Epicentre :
 
-Ntry_Random_toppling: 
-- Analysis : Evolution de la détection de la plus grande avalanche par configuration
-- Distance_crit: étude de la distance à la criticalité au cours du temps et position de la plus grande avalanche
+* Epicentre.ipynb : étude de la position des épicentres.
+* Com.ipynb : étude de la position des centres de masse.
 
-PDF_data:
-- Etude des histogrames en fonction des conditions de bords, état transitoire, position des épicentre etc.
+Fractal :
 
-Size scaling:
-- Etude des effets de taille sur la distribution
+* Étude de la dimension fractale des avalanches.
 
-System creation:
-- Configuration.ipynb étude de la structure interne du système pour créé un nouveau système
-- New_configuration.py: scritp pour créé un nouveau système à partir d'un état conservatif
+Ntry_Random_toppling :
 
-Verification:
-- Vérification de la méthode de fitting
+* Analysis : évolution de la détection de la plus grande avalanche par configuration.
+* Distance_crit : étude de la distance à la criticalité au cours du temps et de la position de la plus grande avalanche.
+
+PDF_data :
+
+* Étude des histogrammes en fonction des conditions de bord, de l'état transitoire, de la position des épicentres, etc.
+
+Size scaling :
+
+* Étude des effets de taille sur la distribution.
+
+System creation :
+
+* Configuration.ipynb : étude de la structure interne du système pour créer un nouveau système.
+* New_configuration.py : script pour créer un nouveau système à partir d'un état conservatif.
+
+Verification :
+
+* Vérification de la méthode de fitting.
 

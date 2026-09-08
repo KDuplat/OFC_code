@@ -1,0 +1,74 @@
+msize = 3
+sigma = 0
+2: 
+Intraclass criterion: 1577.3551204739222
+Interclass criterion: 43.1914319026965
+3: 
+Intraclass criterion: 1196.1967926264351
+Interclass criterion: 46.821518474983854
+4: 
+Intraclass criterion: 1012.4355602420922
+Interclass criterion: 47.623732767649315
+5: 
+Intraclass criterion: 874.6359056354596
+Interclass criterion: 46.7069257166487
+6: 
+Intraclass criterion: 778.7446660936027
+Interclass criterion: 48.51959435722617
+
+
+sigma = 5
+2: 
+Intraclass criterion: 1577.3551204739222
+Interclass criterion: 43.1914319026965
+3: 
+Intraclass criterion: 1200.4232882701147
+Interclass criterion: 46.69422230550487
+4: 
+Intraclass criterion: 1010.8395434136753
+Interclass criterion: 47.245012002126536
+5: 
+Intraclass criterion: 878.8487405823944
+Interclass criterion: 47.30609091355608
+6: 
+Intraclass criterion: 778.7446660936027
+Interclass criterion: 48.51959435722617
+
+
+msize = 5
+sigma = 0
+2: 
+Intraclass criterion: 1577.3551204739222
+Interclass criterion: 43.1914319026965
+3: 
+Intraclass criterion: 1223.8179321601524
+Interclass criterion: 45.89810556626226
+4: 
+Intraclass criterion: 1007.7774545594582
+Interclass criterion: 45.85953189858403
+5: 
+Intraclass criterion: 879.525468119143
+Interclass criterion: 46.8464931132843
+6: 
+Intraclass criterion: 778.7446660936027
+Interclass criterion: 48.51959435722617
+
+
+sigma = 5
+2: 
+Intraclass criterion: 1576.4393581290583
+Interclass criterion: 43.17361449231715
+3: 
+Intraclass criterion: 1227.9871890864779
+Interclass criterion: 45.647582300481616
+4: 
+Intraclass criterion: 1001.1122284484434
+Interclass criterion: 45.31786949535563
+5: 
+Intraclass criterion: 879.3138376562335
+Interclass criterion: 46.72704115392592
+6: 
+Intraclass criterion: 786.6851921694267
+Interclass criterion: 48.06116020317718
+
+

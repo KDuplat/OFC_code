@@ -1,0 +1,4 @@
+msize = 3
+sigma = 2
+
+
